@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+ sql_server:
+  image: mcr.microsoft.com/mssql/server:latest
+  restart: always
+  environment:
+   - ACCEPT_EULA=Y
+   - SA_PASSWORD=<Mylovefromthesky8553!>
+   - attach_dbs=[{"dbName":"Anna_shop","dbFiles":["D:\\Download\\Anna_shop\\database\\Anna_shop.MDF","D:\\Download\\Anna_shop\\database\\Anna_shop_log.LDF"]}]
+  ports:
+   - '1433:1433'
+  volumes:
+    - D:\Download\Anna_shop\database:/var/opt/mssql/data

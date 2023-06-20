@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -182,29 +183,53 @@ namespace fanail.import
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            if (guna2DataGridView2.RowCount>0)
-            {
-                sumQty();
-                model.SqlExecute("insert into tb_import(order_id,user_id,im_totalQty,im_totalPrice,im_date,im_status) values ('"+guna2DataGridView1.CurrentRow.Cells["Column4"].Value.ToString()+"','"+fm_login.em_id+"','"+totalQty+"','"+totalPrice+"',getdate(),1)");
-                for (int i =0;i< guna2DataGridView2.RowCount;i++)
+            bool Check = false;
+            for(int i=0; i < guna2DataGridView2.Rows.Count; i++)
+			{
+                if (guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn6"].Value.ToString()!="0")
                 {
-                    model.GetCount("select * from tb_import", "im_id");
-                    model.SqlExecute("insert into tb_importdetail(im_id,pro_id,imd_qty,imd_price,imd_totalPrice) values ('"+model.count+"','"+ guna2DataGridView2.CurrentRow.Cells["dataGridViewTextBoxColumn2"].Value.ToString() + "','"+Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn6"].Value.ToString()) +"','"+ Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn7"].Value.ToString()) + "','"+(Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn6"].Value.ToString())*Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn7"].Value.ToString())) +"')");
-
-                    model.GetCount("select pro_qty from tb_product where pro_id='"+ guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn2"].Value.ToString() + "'", "pro_qty");
-                    model.SqlExecute("update tb_product set pro_qty='" +(Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn6"].Value.ToString())+Convert.ToInt32(model.count)) + "' where pro_id='" + guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn2"].Value.ToString() + "'");
-
+                    if (guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn7"].Value.ToString() == "0" || guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn7"].Value.ToString() == "")
+                    {
+                        Check= true;
+                        break;
+                    }
                 }
-                model.SqlExecute("update tb_order set order_status=0 where order_id='"+guna2DataGridView1.CurrentRow.Cells["Column4"].Value.ToString()+"'");
-
-                
-                AlertMessage alert = new AlertMessage();
-                alert.TopMost = true;
-                alert.showAlert("ບັນທຶກການນຳເຂົ້າສຳເລັດແລ້ວ.");
-                ShowData();
-                sumQty();
-                
+                else
+                {
+                    Check = false;
+                }
             }
+
+            if (Check==true)
+            {
+                WrongDialog.Show("ກະລຸນາປ້ອນຂໍ້ມູນໃຫ້ຄົບ");
+            }
+            else
+            {
+				if (guna2DataGridView2.RowCount > 0)
+				{
+					sumQty();
+					model.SqlExecute("insert into tb_import(order_id,user_id,im_totalQty,im_totalPrice,im_date,im_status) values ('" + guna2DataGridView1.CurrentRow.Cells["Column4"].Value.ToString() + "','" + fm_login.em_id + "','" + totalQty + "','" + totalPrice + "',getdate(),1)");
+					for (int i = 0; i < guna2DataGridView2.RowCount; i++)
+					{
+						model.GetCount("select * from tb_import", "im_id");
+						model.SqlExecute("insert into tb_importdetail(im_id,pro_id,imd_qty,imd_price,imd_totalPrice) values ('" + model.count + "','" + guna2DataGridView2.CurrentRow.Cells["dataGridViewTextBoxColumn2"].Value.ToString() + "','" + Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn6"].Value.ToString()) + "','" + Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn7"].Value.ToString()) + "','" + (Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn6"].Value.ToString()) * Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn7"].Value.ToString())) + "')");
+
+						model.GetCount("select pro_qty from tb_product where pro_id='" + guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn2"].Value.ToString() + "'", "pro_qty");
+						model.SqlExecute("update tb_product set pro_qty='" + (Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn6"].Value.ToString()) + Convert.ToInt32(model.count)) + "' where pro_id='" + guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn2"].Value.ToString() + "'");
+
+					}
+					model.SqlExecute("update tb_order set order_status=0 where order_id='" + guna2DataGridView1.CurrentRow.Cells["Column4"].Value.ToString() + "'");
+
+
+					AlertMessage alert = new AlertMessage();
+					alert.TopMost = true;
+					alert.showAlert("ບັນທຶກການນຳເຂົ້າສຳເລັດແລ້ວ.");
+					ShowData();
+					sumQty();
+
+				}
+			}
         }
 
         private void guna2TextBox2_KeyPress(object sender, KeyPressEventArgs e)

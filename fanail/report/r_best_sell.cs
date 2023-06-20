@@ -29,6 +29,7 @@ crystalReportViewer1.PrintReport();
 			try
 			{
 				RProductTop bill = new RProductTop();
+				bill.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
 				bill.SetParameterValue("StartDate", dateTimePicker1.Value);
 				bill.SetParameterValue("EndDate", dateTimePicker2.Value);
 				crystalReportViewer1.Refresh();

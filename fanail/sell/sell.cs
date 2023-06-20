@@ -59,7 +59,7 @@ namespace fanail.sell
                     m.label12.Text = this.label5.Text;
                     m.label1.Text = this.label1.Text.ToString();
                     m.label2.Text = this.label4.Text.ToString();
-                    m.label13.Text = this.label4.Text.ToString();
+                    m.label13.Text = this.label4.Text.Replace(",","");
                     m.ShowDialog();
                 }
             }
@@ -92,7 +92,7 @@ namespace fanail.sell
                 for (int i = 0; i < guna2DataGridView2.RowCount; i++)
                 {
                     totalQty += Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["dataGridViewTextBoxColumn6"].Value.ToString());
-                    totalPrice += Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["Column1"].Value.ToString());
+                    totalPrice += Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["Column9"].Value.ToString());
                 }
                 label1.Text = totalQty.ToString("#,###");
                 label4.Text = totalPrice.ToString("#,###");
@@ -130,7 +130,7 @@ namespace fanail.sell
                             {
                                 int qtyIndex = Convert.ToInt32(guna2DataGridView2.CurrentRow.Cells["dataGridViewTextBoxColumn6"].Value.ToString());
                                 guna2DataGridView2.CurrentRow.Cells["dataGridViewTextBoxColumn6"].Value = Convert.ToInt32(guna2TextBox1.Text) ;
-                                guna2DataGridView2.CurrentRow.Cells["Column1"].Value = Convert.ToInt32(guna2DataGridView2.CurrentRow.Cells["dataGridViewTextBoxColumn6"].Value.ToString()) * Convert.ToInt32(guna2DataGridView2.CurrentRow.Cells["Column1"].Value.ToString());
+                                guna2DataGridView2.CurrentRow.Cells["Column1"].Value = Convert.ToInt32(guna2DataGridView2.CurrentRow.Cells["dataGridViewTextBoxColumn6"].Value.ToString()) * Convert.ToInt32(guna2DataGridView2.CurrentRow.Cells["Column9"].Value.ToString());
                                 
                                 //status = true;
                                 //break;

@@ -26,6 +26,7 @@ namespace fanail.report
 		private void guna2Button2_Click(object sender, EventArgs e)
 		{
 			Report_Paid reportreceipt_paid = new Report_Paid();
+			reportreceipt_paid.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
 			try
 			{
 				getcurrency();
@@ -40,8 +41,8 @@ namespace fanail.report
 				{
 					if (Myreader["qty"].ToString() != "")
 					{
-						reportreceipt_paid.SetParameterValue("sumimportqty", Convert.ToDouble(Myreader["qty"]).ToString());
-						reportreceipt_paid.SetParameterValue("sumpriceimport", Convert.ToDouble(Myreader["price"]).ToString());
+						reportreceipt_paid.SetParameterValue("sumimportqty", Convert.ToDouble(Myreader["qty"]).ToString("#,###"));
+						reportreceipt_paid.SetParameterValue("sumpriceimport", Convert.ToDouble(Myreader["price"]).ToString("#,###"));
 						//importprice = Convert.ToDouble(Myreader["price"]);
 					}
 					else
@@ -63,7 +64,7 @@ namespace fanail.report
 				{
 					if (Myreader["qty"].ToString() != "")
 					{
-						reportreceipt_paid.SetParameterValue("Sum_THB", (Convert.ToDouble(Myreader["price"]) / bath).ToString());
+						reportreceipt_paid.SetParameterValue("Sum_THB", (Convert.ToDouble(Myreader["price"]) / bath).ToString("#,###"));
 					}
 					else
 					{
@@ -82,7 +83,7 @@ namespace fanail.report
 				{
 					if (Myreader["qty"].ToString() != "")
 					{
-						reportreceipt_paid.SetParameterValue("Sum_USD", (Convert.ToDouble(Myreader["price"]) / usd).ToString());
+						reportreceipt_paid.SetParameterValue("Sum_USD", (Convert.ToDouble(Myreader["price"]) / usd).ToString("#,###"));
 					}
 					else
 					{
@@ -101,8 +102,8 @@ namespace fanail.report
 				{
 					if (Myreader["qty"].ToString() != "")
 					{
-						reportreceipt_paid.SetParameterValue("sumsellqty", Convert.ToDouble(Myreader["qty"]).ToString());
-						reportreceipt_paid.SetParameterValue("Sum_Kip", Convert.ToDouble(Myreader["price"]).ToString());
+						reportreceipt_paid.SetParameterValue("sumsellqty", Convert.ToDouble(Myreader["qty"]).ToString("#,###"));
+						reportreceipt_paid.SetParameterValue("Sum_Kip", Convert.ToDouble(Myreader["price"]).ToString("#,###"));
 						reportreceipt_paid.SetParameterValue("StartDate", dateTimePicker1.Value);
 						reportreceipt_paid.SetParameterValue("EndDate", dateTimePicker2.Value);
 						crystalReportViewer1.Refresh();

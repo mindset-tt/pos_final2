@@ -129,7 +129,15 @@ namespace fanail.sell
 				{
 					if (guna2TextBox1.Text == "")
 					{
-						MessageBox.Show("ກະລຸນາປ້ອນລາຄາ", "ຜິດພາດ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+						WrongDialog.Show("ກະລຸນາປ້ອນລາຄາ");
+
+					}
+					else if (Convert.ToInt64(guna2TextBox1.Text) < Convert.ToInt64(label2.Text.Replace(",", "")))
+					{
+						//WrongDialog alertMessage = new WrongDialog();
+						WrongDialog.Show("ກະລຸນາປ້ອນລາຄາໃຫ້ຖືກຕ້ອງ");
+
 					}
 					else
 					{
@@ -204,7 +212,15 @@ namespace fanail.sell
 				{
 					if (guna2TextBox1.Text == "")
 					{
-						MessageBox.Show("ກະລຸນາປ້ອນລາຄາ", "ຜິດພາດ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+						WrongDialog.Show("ກະລຸນາປ້ອນລາຄາ");
+
+					}
+					else if (Convert.ToInt64(guna2TextBox1.Text) < Convert.ToInt64(label2.Text.Replace(",", "")))
+					{
+						//WrongDialog alertMessage = new WrongDialog();
+						WrongDialog.Show("ກະລຸນາປ້ອນລາຄາໃຫ້ຖືກຕ້ອງ");
+
 					}
 					else
 					{
@@ -278,7 +294,15 @@ namespace fanail.sell
 				{
 					if (guna2TextBox1.Text == "")
 					{
-						MessageBox.Show("ກະລຸນາປ້ອນລາຄາ", "ຜິດພາດ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+						WrongDialog.Show("ກະລຸນາປ້ອນລາຄາ");
+
+					}
+					else if (Convert.ToInt64(guna2TextBox1.Text) < Convert.ToInt64(label2.Text.Replace(",", "")))
+					{
+						//WrongDialog alertMessage = new WrongDialog();
+						WrongDialog.Show("ກະລຸນາປ້ອນລາຄາໃຫ້ຖືກຕ້ອງ");
+
 					}
 					else
 					{
@@ -365,7 +389,8 @@ namespace fanail.sell
 
         private void guna2RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
-
+			guna2TextBox1.Text = "";
+			label3.Text = "0";
 			con.Open();
 			string sql = "select max(rate_bath) from tb_rate where rate_status = 1";
 			SqlCommand Comd = new SqlCommand(sql, con);
@@ -382,7 +407,7 @@ namespace fanail.sell
 			}
 			con.Close();
 			string totalprice = "";
-			totalprice = (Convert.ToDouble(label13.Text.Replace(",", "")) / bath).ToString();
+			totalprice = (Convert.ToDouble(label13.Text.Replace(",", "")) / bath).ToString(".###");
 			//label3.Text = Convert.ToDouble(totalprice).ToString();
 
 			label2.Text = Convert.ToDouble(totalprice).ToString();
@@ -490,6 +515,8 @@ namespace fanail.sell
 
 		private void guna2RadioButton3_CheckedChanged(object sender, EventArgs e)
 		{
+			guna2TextBox1.Text = "";
+			label3.Text = "0";
 			con.Open();
 			string sql = "select max(rate_dollar) from tb_rate where rate_status = 1";
 			SqlCommand Comd = new SqlCommand(sql, con);
@@ -506,13 +533,15 @@ namespace fanail.sell
 			}
 			con.Close();
 			string totalprice = "";
-			totalprice = (Convert.ToDouble(label13.Text.Replace(",", "")) / usd).ToString();
+			totalprice = (Convert.ToDouble(label13.Text.Replace(",", "")) / usd).ToString(".###");
 
 			label2.Text = Convert.ToDouble(totalprice).ToString();
 		}
 
 		private void guna2RadioButton1_CheckedChanged(object sender, EventArgs e)
 		{
+			guna2TextBox1.Text = "";
+			label3.Text = "0";
 			label2.Text = Convert.ToDouble(label13.Text.Replace(",", "")).ToString();
 		}
 	}

@@ -31,6 +31,10 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.label3 = new System.Windows.Forms.Label();
+			this.guna2CustomRadioButton2 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+			this.label1 = new System.Windows.Forms.Label();
+			this.guna2CustomRadioButton1 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
 			this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
 			this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
 			this.label2 = new System.Windows.Forms.Label();
@@ -45,10 +49,10 @@
 			// 
 			this.panel2.Controls.Add(this.crystalReportViewer1);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel2.Location = new System.Drawing.Point(0, 203);
+			this.panel2.Location = new System.Drawing.Point(0, 240);
 			this.panel2.Margin = new System.Windows.Forms.Padding(2);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1185, 591);
+			this.panel2.Size = new System.Drawing.Size(1185, 554);
 			this.panel2.TabIndex = 3;
 			// 
 			// crystalReportViewer1
@@ -60,12 +64,16 @@
 			this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
 			this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(2);
 			this.crystalReportViewer1.Name = "crystalReportViewer1";
-			this.crystalReportViewer1.Size = new System.Drawing.Size(1185, 591);
+			this.crystalReportViewer1.Size = new System.Drawing.Size(1185, 554);
 			this.crystalReportViewer1.TabIndex = 2;
 			this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.label3);
+			this.panel1.Controls.Add(this.guna2CustomRadioButton2);
+			this.panel1.Controls.Add(this.label1);
+			this.panel1.Controls.Add(this.guna2CustomRadioButton1);
 			this.panel1.Controls.Add(this.guna2Button2);
 			this.panel1.Controls.Add(this.guna2Button1);
 			this.panel1.Controls.Add(this.label2);
@@ -76,8 +84,66 @@
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Margin = new System.Windows.Forms.Padding(2);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1185, 203);
+			this.panel1.Size = new System.Drawing.Size(1185, 240);
 			this.panel1.TabIndex = 2;
+			// 
+			// label3
+			// 
+			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Phetsarath OT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+			this.label3.Location = new System.Drawing.Point(472, 60);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(55, 29);
+			this.label3.TabIndex = 203;
+			this.label3.Text = "ນຳເຂົ້າ";
+			// 
+			// guna2CustomRadioButton2
+			// 
+			this.guna2CustomRadioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.guna2CustomRadioButton2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.guna2CustomRadioButton2.CheckedState.BorderThickness = 0;
+			this.guna2CustomRadioButton2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.guna2CustomRadioButton2.CheckedState.InnerColor = System.Drawing.Color.White;
+			this.guna2CustomRadioButton2.Location = new System.Drawing.Point(439, 63);
+			this.guna2CustomRadioButton2.Name = "guna2CustomRadioButton2";
+			this.guna2CustomRadioButton2.Size = new System.Drawing.Size(20, 20);
+			this.guna2CustomRadioButton2.TabIndex = 202;
+			this.guna2CustomRadioButton2.Text = "guna2CustomRadioButton2";
+			this.guna2CustomRadioButton2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.guna2CustomRadioButton2.UncheckedState.BorderThickness = 2;
+			this.guna2CustomRadioButton2.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+			this.guna2CustomRadioButton2.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+			// 
+			// label1
+			// 
+			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Phetsarath OT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+			this.label1.Location = new System.Drawing.Point(391, 59);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(42, 29);
+			this.label1.TabIndex = 201;
+			this.label1.Text = "ສັ່ງຊື້";
+			// 
+			// guna2CustomRadioButton1
+			// 
+			this.guna2CustomRadioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.guna2CustomRadioButton1.Checked = true;
+			this.guna2CustomRadioButton1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.guna2CustomRadioButton1.CheckedState.BorderThickness = 0;
+			this.guna2CustomRadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+			this.guna2CustomRadioButton1.CheckedState.InnerColor = System.Drawing.Color.White;
+			this.guna2CustomRadioButton1.Location = new System.Drawing.Point(355, 64);
+			this.guna2CustomRadioButton1.Name = "guna2CustomRadioButton1";
+			this.guna2CustomRadioButton1.Size = new System.Drawing.Size(20, 20);
+			this.guna2CustomRadioButton1.TabIndex = 200;
+			this.guna2CustomRadioButton1.Text = "guna2CustomRadioButton1";
+			this.guna2CustomRadioButton1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+			this.guna2CustomRadioButton1.UncheckedState.BorderThickness = 2;
+			this.guna2CustomRadioButton1.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+			this.guna2CustomRadioButton1.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+			this.guna2CustomRadioButton1.CheckedChanged += new System.EventHandler(this.guna2CustomRadioButton1_CheckedChanged);
 			// 
 			// guna2Button2
 			// 
@@ -97,7 +163,7 @@
 			this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(72)))), ((int)(((byte)(92)))));
 			this.guna2Button2.ImageOffset = new System.Drawing.Point(-13, -3);
 			this.guna2Button2.ImageSize = new System.Drawing.Size(25, 25);
-			this.guna2Button2.Location = new System.Drawing.Point(643, 136);
+			this.guna2Button2.Location = new System.Drawing.Point(642, 172);
 			this.guna2Button2.Margin = new System.Windows.Forms.Padding(0);
 			this.guna2Button2.Name = "guna2Button2";
 			this.guna2Button2.Size = new System.Drawing.Size(124, 48);
@@ -124,7 +190,7 @@
 			this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(72)))), ((int)(((byte)(92)))));
 			this.guna2Button1.ImageOffset = new System.Drawing.Point(-13, -3);
 			this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
-			this.guna2Button1.Location = new System.Drawing.Point(419, 136);
+			this.guna2Button1.Location = new System.Drawing.Point(418, 172);
 			this.guna2Button1.Margin = new System.Windows.Forms.Padding(0);
 			this.guna2Button1.Name = "guna2Button1";
 			this.guna2Button1.Size = new System.Drawing.Size(124, 48);
@@ -139,7 +205,7 @@
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Saysettha OT", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
 			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.label2.Location = new System.Drawing.Point(545, 20);
+			this.label2.Location = new System.Drawing.Point(544, 20);
 			this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(100, 34);
@@ -154,7 +220,7 @@
 			this.dateTimePicker2.CalendarTitleBackColor = System.Drawing.Color.WhiteSmoke;
 			this.dateTimePicker2.Font = new System.Drawing.Font("Saysettha OT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
 			this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.dateTimePicker2.Location = new System.Drawing.Point(643, 70);
+			this.dateTimePicker2.Location = new System.Drawing.Point(642, 106);
 			this.dateTimePicker2.MinimumSize = new System.Drawing.Size(188, 50);
 			this.dateTimePicker2.Name = "dateTimePicker2";
 			this.dateTimePicker2.Size = new System.Drawing.Size(188, 50);
@@ -168,7 +234,7 @@
 			this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.WhiteSmoke;
 			this.dateTimePicker1.Font = new System.Drawing.Font("Saysettha OT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
 			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-			this.dateTimePicker1.Location = new System.Drawing.Point(356, 70);
+			this.dateTimePicker1.Location = new System.Drawing.Point(355, 106);
 			this.dateTimePicker1.MinimumSize = new System.Drawing.Size(188, 50);
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(188, 50);
@@ -180,7 +246,7 @@
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Saysettha OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
 			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.label4.Location = new System.Drawing.Point(578, 74);
+			this.label4.Location = new System.Drawing.Point(577, 110);
 			this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(36, 34);
@@ -216,5 +282,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
-    }
+		private System.Windows.Forms.Label label1;
+		private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton1;
+		private System.Windows.Forms.Label label3;
+		private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton2;
+	}
 }

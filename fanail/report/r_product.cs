@@ -1,4 +1,5 @@
-﻿using System;
+﻿using fanail.order;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +22,7 @@ namespace fanail.report
 
 		}
 		model model = new model();
-		SqlConnection con = new SqlConnection(@"Server=localhost,1433;Database=Anna_shop;User ID=sa;Password=<Mylovefromthesky8553!>;MultipleActiveResultSets=False;TrustServerCertificate=True;");
+		SqlConnection con = new SqlConnection(@"Server=localhost,1433;Database=pos_db;User ID=sa;Password=<Mylovefromthesky8553!>;MultipleActiveResultSets=False;TrustServerCertificate=True;");
 		string sql = "";
 		private void cbb_producttype()
 		{
@@ -82,34 +83,29 @@ namespace fanail.report
 
 		private void guna2Button2_Click(object sender, EventArgs e)
 		{
-			Report_Porduct report = new Report_Porduct();
+			report_Sell report = new report_Sell();
+			report.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
 			if (guna2ComboBox1.Text == "ທັງໝົດ" && guna2ComboBox2.Text == "ທັງໝົດ")
 			{
 				try
 				{
-					con.Open();
-					string sql = "select sum(pro_qty) as pro_qty from View_RProducts where pro_status = 1";
-					SqlCommand cmd = new SqlCommand(sql, con);
-					SqlDataReader Myreader = cmd.ExecuteReader();
-					if (Myreader.Read())
-					{
-						if (Myreader["pro_qty"].ToString() != "")
-						{
-							SqlConnection Con = new SqlConnection(@"Server=localhost,1433;Database=Anna_shop;User ID=sa;Password=<Mylovefromthesky8553!>;MultipleActiveResultSets=False;TrustServerCertificate=True;");
-							Con.Open();
-							string Sql = "select * from View_RProducts where pro_status = 1";
-							SqlCommand Cmd = new SqlCommand(Sql, Con);
-							SqlDataReader myreader = Cmd.ExecuteReader();
-							DataTable Dt = new DataTable();
-							Dt.Load(myreader);
-							report.SetDataSource(Dt);
-							crystalReportViewer1.Refresh();
-							crystalReportViewer1.ReportSource = report;
-							crystalReportViewer1.Refresh();
-							Con.Close();
-						}
-					}
-					con.Close();
+
+					//SqlConnection Con = new SqlConnection(@"Server=localhost,1433;Database=pos_db;User ID=sa;Password=<Mylovefromthesky8553!>;MultipleActiveResultSets=False;TrustServerCertificate=True;");
+					//Con.Open();
+					//string Sql = "select * from View_ReportProduct where sell_date between '" + dateTimePicker1.Value + "' and '" + dateTimePicker2.Value + "'";
+					//SqlCommand Cmd = new SqlCommand(Sql, Con);
+					//SqlDataReader myreader = Cmd.ExecuteReader();
+					//DataTable Dt = new DataTable();
+					//Dt.Load(myreader);
+					//report.SetDataSource(Dt);
+					
+					report.SetParameterValue("StartDate", dateTimePicker1.Value);
+					report.SetParameterValue("EndDate", dateTimePicker2.Value);
+					
+					crystalReportViewer1.Refresh();
+					crystalReportViewer1.ReportSource = report;
+					crystalReportViewer1.Refresh();
+
 				}
 				catch
 				{
@@ -121,30 +117,23 @@ namespace fanail.report
 			{
 				try
 				{
-					con.Open();
-					string sql = "select sum(pro_qty) as pro_qty from View_RProducts where pro_status = 1 and type_name = N'" + guna2ComboBox1.Text + "'";
-					SqlCommand cmd = new SqlCommand(sql, con);
-					SqlDataReader Myreader = cmd.ExecuteReader();
-					if (Myreader.Read())
-					{
-						if (Myreader["pro_qty"].ToString() != "")
-						{
-							SqlConnection Con = new SqlConnection(@"Server=localhost,1433;Database=Anna_shop;User ID=sa;Password=<Mylovefromthesky8553!>;MultipleActiveResultSets=False;TrustServerCertificate=True;");
-							Con.Open();
-							string Sql = "select * from View_RProducts where pro_status = 1 and type_name = N'" + guna2ComboBox1.Text + "'";
-							SqlCommand Cmd = new SqlCommand(Sql, Con);
-							SqlDataReader myreader = Cmd.ExecuteReader();
-							DataTable Dt = new DataTable();
-							Dt.Load(myreader);
-							report.SetDataSource(Dt);
-							crystalReportViewer1.Refresh();
-							crystalReportViewer1.ReportSource = report;
-							crystalReportViewer1.Refresh();
-							Con.Close();
 
-						}
-					}
-					con.Close();
+					//SqlConnection Con = new SqlConnection(@"Server=localhost,1433;Database=pos_db;User ID=sa;Password=<Mylovefromthesky8553!>;MultipleActiveResultSets=False;TrustServerCertificate=True;");
+					//Con.Open();
+					//string Sql = "select * from View_ReportProduct where sell_date between '" + dateTimePicker1.Value.ToString() + "' and '" + dateTimePicker2.Value.ToString() + "' and type_name = N'" + guna2ComboBox1.Text + "'";
+					//SqlCommand Cmd = new SqlCommand(Sql, Con);
+					//SqlDataReader myreader = Cmd.ExecuteReader();
+					//DataTable Dt = new DataTable();
+					//Dt.Load(myreader);
+					//report.SetDataSource(Dt);
+					report.SetParameterValue("unit_name", guna2ComboBox2.Text);
+					report.SetParameterValue("StartDate", dateTimePicker1.Value);
+					report.SetParameterValue("EndDate", dateTimePicker2.Value);
+					crystalReportViewer1.Refresh();
+					crystalReportViewer1.ReportSource = report;
+					crystalReportViewer1.Refresh();
+					//Con.Close();
+
 				}
 				catch
 				{
@@ -156,29 +145,22 @@ namespace fanail.report
 			{
 				try
 				{
-					con.Open();
-					string sql = "select sum(pro_qty) as pro_qty from View_RProducts where pro_status = 1 and unit_name = N'" + guna2ComboBox2.Text + "'";
-					SqlCommand cmd = new SqlCommand(sql, con);
-					SqlDataReader Myreader = cmd.ExecuteReader();
-					if (Myreader.Read())
-					{
-						if (Myreader["pro_qty"].ToString() != "")
-						{
-							SqlConnection Con = new SqlConnection(@"Server=localhost,1433;Database=Anna_shop;User ID=sa;Password=<Mylovefromthesky8553!>;MultipleActiveResultSets=False;TrustServerCertificate=True;");
-							Con.Open();
-							string Sql = "select * from View_RProducts where pro_status = 1 and unit_name = N'" + guna2ComboBox2.Text + "'";
-							SqlCommand Cmd = new SqlCommand(Sql, Con);
-							SqlDataReader myreader = Cmd.ExecuteReader();
-							DataTable Dt = new DataTable();
-							Dt.Load(myreader);
-							report.SetDataSource(Dt);
-							crystalReportViewer1.Refresh();
-							crystalReportViewer1.ReportSource = report;
-							crystalReportViewer1.Refresh();
-							Con.Close();
-						}
-					}
-					con.Close();
+
+					//SqlConnection Con = new SqlConnection(@"Server=localhost,1433;Database=pos_db;User ID=sa;Password=<Mylovefromthesky8553!>;MultipleActiveResultSets=False;TrustServerCertificate=True;");
+					//Con.Open();
+					//string Sql = "select * from View_ReportProduct where sell_date between '" + dateTimePicker1.Value.ToString() + "' and '" + dateTimePicker2.Value.ToString() + "' and unit_name = N'" + guna2ComboBox2.Text + "'";
+					//SqlCommand Cmd = new SqlCommand(Sql, Con);
+					//SqlDataReader myreader = Cmd.ExecuteReader();
+					//DataTable Dt = new DataTable();
+					//Dt.Load(myreader);
+					//report.SetDataSource(Dt);
+					report.SetParameterValue("type_name", guna2ComboBox1.Text);
+					report.SetParameterValue("StartDate", dateTimePicker1.Value);
+					report.SetParameterValue("EndDate", dateTimePicker2.Value);
+					crystalReportViewer1.Refresh();
+					crystalReportViewer1.ReportSource = report;
+					crystalReportViewer1.Refresh();
+					//Con.Close();
 				}
 				catch
 				{
@@ -189,29 +171,24 @@ namespace fanail.report
 			{
 				try
 				{
-					con.Open();
-					string sql = "select sum(pro_qty) as pro_qty from View_RProducts where pro_status = 1 and type_name = N'" + guna2ComboBox1.Text + "' and unit_name = N'" + guna2ComboBox2.Text + "'";
-					SqlCommand cmd = new SqlCommand(sql, con);
-					SqlDataReader Myreader = cmd.ExecuteReader();
-					if (Myreader.Read())
-					{
-						if (Myreader["pro_qty"].ToString() != "")
-						{
-							SqlConnection Con = new SqlConnection(@"Server=localhost,1433;Database=Anna_shop;User ID=sa;Password=<Mylovefromthesky8553!>;MultipleActiveResultSets=False;TrustServerCertificate=True;");
-							Con.Open();
-							string Sql = "select * from View_RProducts where pro_status = 1 and type_name = N'" + guna2ComboBox1.Text + "' and unit_name = N'" + guna2ComboBox2.Text + "'";
-							SqlCommand Cmd = new SqlCommand(Sql, Con);
-							SqlDataReader myreader = Cmd.ExecuteReader();
-							DataTable Dt = new DataTable();
-							Dt.Load(myreader);
-							report.SetDataSource(Dt);
-							crystalReportViewer1.Refresh();
-							crystalReportViewer1.ReportSource = report;
-							crystalReportViewer1.Refresh();
-							Con.Close();
-						}
-					}
-					con.Close();
+
+					//SqlConnection Con = new SqlConnection(@"Server=localhost,1433;Database=pos_db;User ID=sa;Password=<Mylovefromthesky8553!>;MultipleActiveResultSets=False;TrustServerCertificate=True;");
+					//Con.Open();
+					//string Sql = "select * from View_ReportProduct where sell_date between '" + dateTimePicker1.Value.ToString() + "' and '" + dateTimePicker2.Value.ToString() + "' and type_name = N'" + guna2ComboBox1.Text + "' and unit_name = N'" + guna2ComboBox2.Text + "'";
+					//SqlCommand Cmd = new SqlCommand(Sql, Con);
+					//SqlDataReader myreader = Cmd.ExecuteReader();
+					//DataTable Dt = new DataTable();
+					//Dt.Load(myreader);
+					//report.SetDataSource(Dt);
+					report.SetParameterValue("type_name", guna2ComboBox1.Text);
+					report.SetParameterValue("unit_name", guna2ComboBox2.Text);
+					report.SetParameterValue("StartDate", dateTimePicker1.Value);
+					report.SetParameterValue("EndDate", dateTimePicker2.Value);
+					crystalReportViewer1.Refresh();
+					crystalReportViewer1.ReportSource = report;
+					crystalReportViewer1.Refresh();
+					//Con.Close();
+
 				}
 				catch
 				{

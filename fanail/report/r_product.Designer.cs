@@ -31,13 +31,17 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-			this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-			this.label2 = new System.Windows.Forms.Label();
 			this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
 			this.label5 = new System.Windows.Forms.Label();
+			this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+			this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+			this.label2 = new System.Windows.Forms.Label();
+			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
 			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
@@ -67,6 +71,10 @@
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.label3);
+			this.panel1.Controls.Add(this.dateTimePicker2);
+			this.panel1.Controls.Add(this.dateTimePicker1);
+			this.panel1.Controls.Add(this.label4);
 			this.panel1.Controls.Add(this.guna2ComboBox2);
 			this.panel1.Controls.Add(this.label1);
 			this.panel1.Controls.Add(this.guna2ComboBox1);
@@ -80,6 +88,68 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1185, 203);
 			this.panel1.TabIndex = 2;
+			// 
+			// guna2ComboBox2
+			// 
+			this.guna2ComboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
+			this.guna2ComboBox2.BorderColor = System.Drawing.Color.Black;
+			this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.guna2ComboBox2.FocusedColor = System.Drawing.Color.Black;
+			this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.Black;
+			this.guna2ComboBox2.Font = new System.Drawing.Font("Saysettha OT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.guna2ComboBox2.ForeColor = System.Drawing.Color.Black;
+			this.guna2ComboBox2.ItemHeight = 30;
+			this.guna2ComboBox2.Location = new System.Drawing.Point(311, 85);
+			this.guna2ComboBox2.Margin = new System.Windows.Forms.Padding(2);
+			this.guna2ComboBox2.Name = "guna2ComboBox2";
+			this.guna2ComboBox2.Size = new System.Drawing.Size(206, 36);
+			this.guna2ComboBox2.TabIndex = 207;
+			// 
+			// label1
+			// 
+			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+			this.label1.ForeColor = System.Drawing.Color.Black;
+			this.label1.Location = new System.Drawing.Point(313, 51);
+			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(87, 29);
+			this.label1.TabIndex = 206;
+			this.label1.Text = "ຫົວໜ່ວຍ :";
+			// 
+			// guna2ComboBox1
+			// 
+			this.guna2ComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+			this.guna2ComboBox1.BorderColor = System.Drawing.Color.Black;
+			this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Black;
+			this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.Black;
+			this.guna2ComboBox1.Font = new System.Drawing.Font("Saysettha OT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.guna2ComboBox1.ForeColor = System.Drawing.Color.Black;
+			this.guna2ComboBox1.ItemHeight = 30;
+			this.guna2ComboBox1.Location = new System.Drawing.Point(65, 85);
+			this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(2);
+			this.guna2ComboBox1.Name = "guna2ComboBox1";
+			this.guna2ComboBox1.Size = new System.Drawing.Size(206, 36);
+			this.guna2ComboBox1.TabIndex = 205;
+			// 
+			// label5
+			// 
+			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+			this.label5.ForeColor = System.Drawing.Color.Black;
+			this.label5.Location = new System.Drawing.Point(67, 55);
+			this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(113, 29);
+			this.label5.TabIndex = 204;
+			this.label5.Text = "ປະເພດສິນຄ້າ :";
 			// 
 			// guna2Button2
 			// 
@@ -99,7 +169,7 @@
 			this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(72)))), ((int)(((byte)(92)))));
 			this.guna2Button2.ImageOffset = new System.Drawing.Point(-13, -3);
 			this.guna2Button2.ImageSize = new System.Drawing.Size(25, 25);
-			this.guna2Button2.Location = new System.Drawing.Point(643, 136);
+			this.guna2Button2.Location = new System.Drawing.Point(335, 134);
 			this.guna2Button2.Margin = new System.Windows.Forms.Padding(0);
 			this.guna2Button2.Name = "guna2Button2";
 			this.guna2Button2.Size = new System.Drawing.Size(124, 48);
@@ -126,7 +196,7 @@
 			this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(72)))), ((int)(((byte)(92)))));
 			this.guna2Button1.ImageOffset = new System.Drawing.Point(-13, -3);
 			this.guna2Button1.ImageSize = new System.Drawing.Size(25, 25);
-			this.guna2Button1.Location = new System.Drawing.Point(419, 136);
+			this.guna2Button1.Location = new System.Drawing.Point(111, 134);
 			this.guna2Button1.Margin = new System.Windows.Forms.Padding(0);
 			this.guna2Button1.Name = "guna2Button1";
 			this.guna2Button1.Size = new System.Drawing.Size(124, 48);
@@ -148,65 +218,59 @@
 			this.label2.TabIndex = 197;
 			this.label2.Text = "ເລຶອກສິ່ີ່ງທີ່ຕ້ອງການລາຍງານ";
 			// 
-			// guna2ComboBox2
+			// dateTimePicker2
 			// 
-			this.guna2ComboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-			this.guna2ComboBox2.BorderColor = System.Drawing.Color.Black;
-			this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.guna2ComboBox2.FocusedColor = System.Drawing.Color.Black;
-			this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.Black;
-			this.guna2ComboBox2.Font = new System.Drawing.Font("Saysettha OT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guna2ComboBox2.ForeColor = System.Drawing.Color.Black;
-			this.guna2ComboBox2.ItemHeight = 30;
-			this.guna2ComboBox2.Location = new System.Drawing.Point(619, 87);
-			this.guna2ComboBox2.Margin = new System.Windows.Forms.Padding(2);
-			this.guna2ComboBox2.Name = "guna2ComboBox2";
-			this.guna2ComboBox2.Size = new System.Drawing.Size(206, 36);
-			this.guna2ComboBox2.TabIndex = 207;
+			this.dateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Saysettha OT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+			this.dateTimePicker2.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
+			this.dateTimePicker2.CalendarTitleBackColor = System.Drawing.Color.WhiteSmoke;
+			this.dateTimePicker2.Font = new System.Drawing.Font("Saysettha OT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+			this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dateTimePicker2.Location = new System.Drawing.Point(958, 132);
+			this.dateTimePicker2.MinimumSize = new System.Drawing.Size(188, 50);
+			this.dateTimePicker2.Name = "dateTimePicker2";
+			this.dateTimePicker2.Size = new System.Drawing.Size(188, 50);
+			this.dateTimePicker2.TabIndex = 209;
 			// 
-			// label1
+			// dateTimePicker1
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-			this.label1.ForeColor = System.Drawing.Color.Black;
-			this.label1.Location = new System.Drawing.Point(614, 52);
-			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(87, 29);
-			this.label1.TabIndex = 206;
-			this.label1.Text = "ຫົວໜ່ວຍ :";
+			this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Saysettha OT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+			this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
+			this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.WhiteSmoke;
+			this.dateTimePicker1.Font = new System.Drawing.Font("Saysettha OT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dateTimePicker1.Location = new System.Drawing.Point(671, 132);
+			this.dateTimePicker1.MinimumSize = new System.Drawing.Size(188, 50);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.Size = new System.Drawing.Size(188, 50);
+			this.dateTimePicker1.TabIndex = 208;
 			// 
-			// guna2ComboBox1
+			// label4
 			// 
-			this.guna2ComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-			this.guna2ComboBox1.BorderColor = System.Drawing.Color.Black;
-			this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-			this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Black;
-			this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.Black;
-			this.guna2ComboBox1.Font = new System.Drawing.Font("Saysettha OT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.guna2ComboBox1.ForeColor = System.Drawing.Color.Black;
-			this.guna2ComboBox1.ItemHeight = 30;
-			this.guna2ComboBox1.Location = new System.Drawing.Point(373, 87);
-			this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(2);
-			this.guna2ComboBox1.Name = "guna2ComboBox1";
-			this.guna2ComboBox1.Size = new System.Drawing.Size(206, 36);
-			this.guna2ComboBox1.TabIndex = 205;
+			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Saysettha OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+			this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.label4.Location = new System.Drawing.Point(893, 136);
+			this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(36, 34);
+			this.label4.TabIndex = 210;
+			this.label4.Text = "ຫາ";
 			// 
-			// label5
+			// label3
 			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-			this.label5.ForeColor = System.Drawing.Color.Black;
-			this.label5.Location = new System.Drawing.Point(368, 56);
-			this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(113, 29);
-			this.label5.TabIndex = 204;
-			this.label5.Text = "ປະເພດສິນຄ້າ :";
+			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Phetsarath OT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+			this.label3.ForeColor = System.Drawing.Color.Black;
+			this.label3.Location = new System.Drawing.Point(867, 92);
+			this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(99, 29);
+			this.label3.TabIndex = 211;
+			this.label3.Text = "ເລືອກວັນທີ່ :";
 			// 
 			// r_product
 			// 
@@ -238,5 +302,9 @@
 		private System.Windows.Forms.Label label1;
 		private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.DateTimePicker dateTimePicker2;
+		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.Label label4;
 	}
 }

@@ -130,7 +130,7 @@ namespace fanail.sell
                             {
                                 int qtyIndex = Convert.ToInt32(guna2DataGridView2.CurrentRow.Cells["dataGridViewTextBoxColumn6"].Value.ToString());
                                 guna2DataGridView2.CurrentRow.Cells["dataGridViewTextBoxColumn6"].Value = Convert.ToInt32(guna2TextBox1.Text) ;
-                                guna2DataGridView2.CurrentRow.Cells["Column1"].Value = Convert.ToInt32(guna2DataGridView2.CurrentRow.Cells["dataGridViewTextBoxColumn6"].Value.ToString()) * Convert.ToInt32(guna2DataGridView2.CurrentRow.Cells["Column9"].Value.ToString());
+                                guna2DataGridView2.CurrentRow.Cells["Column9"].Value = Convert.ToInt32(guna2DataGridView2.CurrentRow.Cells["dataGridViewTextBoxColumn6"].Value.ToString()) * Convert.ToInt32(guna2DataGridView2.CurrentRow.Cells["Column1"].Value.ToString());
                                 
                                 //status = true;
                                 //break;

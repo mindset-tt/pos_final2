@@ -168,7 +168,19 @@ namespace fanail.management
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
-            checkIsnullText();
+			if (Convert.ToInt32(guna2TextBox3.Text.ToString()) > Convert.ToInt32(guna2TextBox1.Text.ToString()))
+			{
+				MessageBox.Show("ກະລຸນາກວດສອບລາຄາຂາຍ ");
+			}
+			else if (Convert.ToInt32(guna2TextBox3.Text.ToString()) == Convert.ToInt32(guna2TextBox1.Text.ToString()))
+			{
+				MessageBox.Show("ກະລຸນາກວດສອບລາຄາຂາຍ ");
+			}
+			else
+			{
+				checkIsnullText();
+			}
+			
             
         }
         private bool checkIsnullText()

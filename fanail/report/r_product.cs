@@ -84,7 +84,13 @@ namespace fanail.report
 		private void guna2Button2_Click(object sender, EventArgs e)
 		{
 			report_Sell report = new report_Sell();
+			report_Sell_with_type report1 = new report_Sell_with_type();
+			report_Sell_with_unit report2 = new report_Sell_with_unit();
+			report_Sell_with_type_and_unit report3 = new report_Sell_with_type_and_unit();
 			report.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
+			report1.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
+			report2.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
+			report3.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
 			if (guna2ComboBox1.Text == "ທັງໝົດ" && guna2ComboBox2.Text == "ທັງໝົດ")
 			{
 				try
@@ -109,11 +115,11 @@ namespace fanail.report
 				}
 				catch
 				{
-					throw;
+					MessageBox.Show("ບໍ່ສາມາດສະແດງລາຍງານໄດ້");
 				}
 
 			}
-			else if (guna2ComboBox1.Text == "ທັງໝົດ" && guna2ComboBox2.Text != "ທັງໝົດ")
+			else if (guna2ComboBox1.Text != "ທັງໝົດ" && guna2ComboBox2.Text == "ທັງໝົດ")
 			{
 				try
 				{
@@ -126,22 +132,24 @@ namespace fanail.report
 					//DataTable Dt = new DataTable();
 					//Dt.Load(myreader);
 					//report.SetDataSource(Dt);
-					report.SetParameterValue("unit_name", guna2ComboBox2.Text);
-					report.SetParameterValue("StartDate", dateTimePicker1.Value);
-					report.SetParameterValue("EndDate", dateTimePicker2.Value);
+
+					report1.SetParameterValue("type_name", guna2ComboBox1.Text);
+					report1.SetParameterValue("StartDate", dateTimePicker1.Value);
+					report1.SetParameterValue("EndDate", dateTimePicker2.Value);
 					crystalReportViewer1.Refresh();
-					crystalReportViewer1.ReportSource = report;
+					crystalReportViewer1.ReportSource = report1;
 					crystalReportViewer1.Refresh();
+
 					//Con.Close();
 
 				}
 				catch
 				{
-					throw;
+					MessageBox.Show("ບໍ່ສາມາດສະແດງລາຍງານໄດ້");
 				}
 
 			}
-			else if (guna2ComboBox1.Text != "ທັງໝົດ" && guna2ComboBox1.Text == "ທັງໝົດ")
+			else if (guna2ComboBox1.Text == "ທັງໝົດ" && guna2ComboBox2.Text != "ທັງໝົດ")
 			{
 				try
 				{
@@ -154,17 +162,17 @@ namespace fanail.report
 					//DataTable Dt = new DataTable();
 					//Dt.Load(myreader);
 					//report.SetDataSource(Dt);
-					report.SetParameterValue("type_name", guna2ComboBox1.Text);
-					report.SetParameterValue("StartDate", dateTimePicker1.Value);
-					report.SetParameterValue("EndDate", dateTimePicker2.Value);
+					report2.SetParameterValue("unit_name", guna2ComboBox2.Text);
+					report2.SetParameterValue("StartDate", dateTimePicker1.Value);
+					report2.SetParameterValue("EndDate", dateTimePicker2.Value);
 					crystalReportViewer1.Refresh();
-					crystalReportViewer1.ReportSource = report;
+					crystalReportViewer1.ReportSource = report2;
 					crystalReportViewer1.Refresh();
 					//Con.Close();
 				}
 				catch
 				{
-					throw;
+					MessageBox.Show("ບໍ່ສາມາດສະແດງລາຍງານໄດ້");
 				}
 			}
 			else
@@ -180,19 +188,19 @@ namespace fanail.report
 					//DataTable Dt = new DataTable();
 					//Dt.Load(myreader);
 					//report.SetDataSource(Dt);
-					report.SetParameterValue("type_name", guna2ComboBox1.Text);
-					report.SetParameterValue("unit_name", guna2ComboBox2.Text);
-					report.SetParameterValue("StartDate", dateTimePicker1.Value);
-					report.SetParameterValue("EndDate", dateTimePicker2.Value);
+					report3.SetParameterValue("type_name", guna2ComboBox1.Text);
+					report3.SetParameterValue("unit_name", guna2ComboBox2.Text);
+					report3.SetParameterValue("StartDate", dateTimePicker1.Value);
+					report3.SetParameterValue("EndDate", dateTimePicker2.Value);
 					crystalReportViewer1.Refresh();
-					crystalReportViewer1.ReportSource = report;
+					crystalReportViewer1.ReportSource = report3;
 					crystalReportViewer1.Refresh();
 					//Con.Close();
 
 				}
 				catch
 				{
-					throw;
+					MessageBox.Show("ບໍ່ສາມາດສະແດງລາຍງານໄດ້");
 				}
 			}
 		}

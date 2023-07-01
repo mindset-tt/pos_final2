@@ -11,21 +11,23 @@ using System.Windows.Forms;
 
 namespace fanail.report
 {
-    public partial class r_income_expense : Form
-    {
-        public r_income_expense()
-        {
-            InitializeComponent();
+	public partial class r_income_expense : Form
+	{
+		public r_income_expense()
+		{
+			InitializeComponent();
 			dateTimePicker1.Value = DateTime.Now;
 			dateTimePicker2.Value = DateTime.Now;
 			getcurrency();
-        }
+		}
 		double total, importprice, sellprice;
 		double usd = 0, bath = 0;
-
+		string allimportprice;
+		string allsellprice;
 		private void guna2Button2_Click(object sender, EventArgs e)
 		{
 			Report_Paid reportreceipt_paid = new Report_Paid();
+
 			reportreceipt_paid.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
 			try
 			{
@@ -43,6 +45,7 @@ namespace fanail.report
 					{
 						reportreceipt_paid.SetParameterValue("sumimportqty", Convert.ToDouble(Myreader["qty"]).ToString("#,###"));
 						reportreceipt_paid.SetParameterValue("sumpriceimport", Convert.ToDouble(Myreader["price"]).ToString("#,###"));
+						allimportprice = Myreader["price"].ToString();
 						//importprice = Convert.ToDouble(Myreader["price"]);
 					}
 					else
@@ -104,6 +107,9 @@ namespace fanail.report
 					{
 						reportreceipt_paid.SetParameterValue("sumsellqty", Convert.ToDouble(Myreader["qty"]).ToString("#,###"));
 						reportreceipt_paid.SetParameterValue("Sum_Kip", Convert.ToDouble(Myreader["price"]).ToString("#,###"));
+						allsellprice = Myreader["price"].ToString();
+						int sumall = Convert.ToInt32(allsellprice) - Convert.ToInt32(allimportprice);
+						reportreceipt_paid.SetParameterValue("sumincome-expense", sumall.ToString("#,###"));
 						reportreceipt_paid.SetParameterValue("StartDate", dateTimePicker1.Value);
 						reportreceipt_paid.SetParameterValue("EndDate", dateTimePicker2.Value);
 						crystalReportViewer1.Refresh();
@@ -176,6 +182,6 @@ namespace fanail.report
 		{
 			crystalReportViewer1.PrintReport();
 		}
-		
+
 	}
 }

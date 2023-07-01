@@ -25,26 +25,34 @@ namespace fanail.report
 
 		private void guna2Button2_Click(object sender, EventArgs e)
 		{
-			if (guna2CustomRadioButton1.Checked == true)
+			try
 			{
-				report_Order bill = new report_Order();
-				bill.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
-				bill.SetParameterValue("StartDate", dateTimePicker1.Value);
-				bill.SetParameterValue("EndDate", dateTimePicker2.Value);
-				crystalReportViewer1.Refresh();
-				crystalReportViewer1.ReportSource = bill;
-				crystalReportViewer1.Refresh();
+				if (guna2CustomRadioButton1.Checked == true)
+				{
+					report_Order bill = new report_Order();
+					bill.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
+					bill.SetParameterValue("StartDate", dateTimePicker1.Value);
+					bill.SetParameterValue("EndDate", dateTimePicker2.Value);
+					crystalReportViewer1.Refresh();
+					crystalReportViewer1.ReportSource = bill;
+					crystalReportViewer1.Refresh();
+				}
+				else
+				{
+					report_Import bill = new report_Import();
+					bill.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
+					bill.SetParameterValue("StartDate", dateTimePicker1.Value);
+					bill.SetParameterValue("EndDate", dateTimePicker2.Value);
+					crystalReportViewer1.Refresh();
+					crystalReportViewer1.ReportSource = bill;
+					crystalReportViewer1.Refresh();
+				}
 			}
-			else
+			catch (Exception ex)
 			{
-				report_Import bill = new report_Import();
-				bill.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
-				bill.SetParameterValue("StartDate", dateTimePicker1.Value);
-				bill.SetParameterValue("EndDate", dateTimePicker2.Value);
-				crystalReportViewer1.Refresh();
-				crystalReportViewer1.ReportSource = bill;
-				crystalReportViewer1.Refresh();
+				MessageBox.Show(ex.Message);
 			}
+
 
 		}
 

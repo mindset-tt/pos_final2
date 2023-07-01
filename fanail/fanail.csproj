@@ -218,14 +218,14 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="report\report_Sell-with-unit.cs">
-      <DependentUpon>report_Sell-with-unit.rpt</DependentUpon>
+    <Compile Include="report\report_Sell-with-type.cs">
+      <DependentUpon>report_Sell-with-type.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="report\report_Sell-with-type.cs">
-      <DependentUpon>report_Sell-with-type.rpt</DependentUpon>
+    <Compile Include="report\report_Sell-with-unit.cs">
+      <DependentUpon>report_Sell-with-unit.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -400,13 +400,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>report_Sell-with-type-and-unit.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="report\report_Sell-with-unit.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>report_Sell-with-unit.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="report\report_Sell-with-type.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>report_Sell-with-type.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report\report_Sell-with-unit.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_Sell-with-unit.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="report\report_Sell.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

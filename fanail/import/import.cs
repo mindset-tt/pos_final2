@@ -279,7 +279,7 @@ namespace fanail.import
 				guna2DataGridView2.Rows.Clear();
 				for (int i = 0; i < model.Pro_ID.Count; i++)
 				{
-					guna2DataGridView2.Rows.Add("", model.Pro_ID[i], model.Pro_Name[i], model.Type_name[i], model.Unit_Name[i], model.Orderd_Qty[i], 0);
+					guna2DataGridView2.Rows.Add("", model.Pro_ID[i], model.Pro_Name[i], model.Type_name[i], model.Unit_Name[i], model.Orderd_Qty[i], 0, 0);
 				}
 				if (guna2DataGridView2.RowCount > 0)
 				{
@@ -349,7 +349,7 @@ namespace fanail.import
 				guna2DataGridView2.Rows.Clear();
 				for (int i = 0; i < model.Pro_ID.Count; i++)
 				{
-					guna2DataGridView2.Rows.Add("", model.Pro_ID[i], model.Pro_Name[i], model.Type_name[i], model.Unit_Name[i], model.Orderd_Qty[i], 0);
+					guna2DataGridView2.Rows.Add("", model.Pro_ID[i], model.Pro_Name[i], model.Type_name[i], model.Unit_Name[i], model.Orderd_Qty[i], 0,0);
 				}
 				if (guna2DataGridView2.RowCount > 0)
 				{
@@ -380,7 +380,7 @@ namespace fanail.import
 				guna2DataGridView2.Rows.Clear();
 				for (int i = 0; i < model.Pro_ID.Count; i++)
 				{
-					guna2DataGridView2.Rows.Add("", model.Pro_ID[i], model.Pro_Name[i], model.Type_name[i], model.Unit_Name[i], model.Orderd_Qty[i], 0);
+					guna2DataGridView2.Rows.Add("", model.Pro_ID[i], model.Pro_Name[i], model.Type_name[i], model.Unit_Name[i], model.Orderd_Qty[i], 0, 0);
 				}
 				if (guna2DataGridView2.RowCount > 0)
 				{

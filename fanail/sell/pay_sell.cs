@@ -113,7 +113,7 @@ namespace fanail.sell
 				MessageBox.Show(Ex.Message);
 			}
 		}
-        //sell sell = new sell();
+        sell sells = new sell();
 		private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -191,6 +191,8 @@ namespace fanail.sell
 								con.Close();
 							}
 						}
+						sells.loadData();
+						sells.guna2DataGridView2.Rows.Clear();
 						MessageBox.Show("ບັນທຶກການສັ່ງຊື້ສຳເລັດແລ້ວ", "ສຳເລັດ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						DialogResult DialogMessege = MessageBox.Show("ທ່ານຕ້ອງການໃບພີມບິນ ຫຼື ບໍ່ ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 						if (DialogMessege == DialogResult.OK)
@@ -198,6 +200,7 @@ namespace fanail.sell
 							bills bf = new bills();
 							sell_bill import_bill = new sell_bill();
 							bf.crystalReportViewer1.Refresh();
+							import_bill.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
 							import_bill.SetParameterValue("sell_id", sell_id);
 							import_bill.SetParameterValue("SUM_USD", (Convert.ToDouble(label13.Text) / Convert.ToDouble(usd)).ToString());
 							import_bill.SetParameterValue("SUM_THB", (Convert.ToDouble(label13.Text) / Convert.ToDouble(bath)).ToString());
@@ -206,6 +209,7 @@ namespace fanail.sell
 							bf.ShowDialog();
 						}
 						this.Close();
+						
 					}
 				}
 				else if (guna2RadioButton2.Checked == true)
@@ -273,6 +277,8 @@ namespace fanail.sell
 								con.Close();
 							}
 						}
+						sells.loadData();
+						sells.guna2DataGridView2.Rows.Clear();
 						MessageBox.Show("ບັນທຶກການສັ່ງຊື້ສຳເລັດແລ້ວ", "ສຳເລັດ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						DialogResult DialogMessege = MessageBox.Show("ທ່ານຕ້ອງການໃບພີມບິນ ຫຼື ບໍ່ ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 						if (DialogMessege == DialogResult.OK)
@@ -280,6 +286,7 @@ namespace fanail.sell
 							bills bf = new bills();
 							sell_bill import_bill = new sell_bill();
 							bf.crystalReportViewer1.Refresh();
+							import_bill.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
 							import_bill.SetParameterValue("sell_id", sell_id);
 							import_bill.SetParameterValue("SUM_USD", (Convert.ToDouble(label13.Text) / Convert.ToDouble(usd)).ToString());
 							import_bill.SetParameterValue("SUM_THB", (Convert.ToDouble(label13.Text) / Convert.ToDouble(bath)).ToString());
@@ -288,6 +295,7 @@ namespace fanail.sell
 							bf.ShowDialog();
 						}
 						this.Close();
+						
 					}
 				}
 				else if (guna2RadioButton3.Checked == true)
@@ -355,6 +363,8 @@ namespace fanail.sell
 								con.Close();
 							}
 						}
+						sells.loadData();
+						sells.guna2DataGridView2.Rows.Clear();
 						MessageBox.Show("ບັນທຶກການສັ່ງຊື້ສຳເລັດແລ້ວ", "ສຳເລັດ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						DialogResult DialogMessege = MessageBox.Show("ທ່ານຕ້ອງການໃບພີມບິນ ຫຼື ບໍ່ ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 						if (DialogMessege == DialogResult.OK)
@@ -362,6 +372,7 @@ namespace fanail.sell
 							bills bf = new bills();
 							sell_bill import_bill = new sell_bill();
 							bf.crystalReportViewer1.Refresh();
+							import_bill.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
 							import_bill.SetParameterValue("sell_id", sell_id);
 							import_bill.SetParameterValue("SUM_USD", (Convert.ToDouble(label13.Text) / Convert.ToDouble(usd)).ToString());
 							import_bill.SetParameterValue("SUM_THB", (Convert.ToDouble(label13.Text) / Convert.ToDouble(bath)).ToString());
@@ -370,6 +381,7 @@ namespace fanail.sell
 							bf.ShowDialog();
 						}
 						this.Close();
+						
 					}
 				}
 				else

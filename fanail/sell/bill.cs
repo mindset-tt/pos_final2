@@ -22,11 +22,13 @@ namespace fanail.sell
             crystalReportViewer1.ReportSource = bill;
             crystalReportViewer1.Refresh();
         }
-
+        sell sells = new sell();
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+			sells.loadData();
+			sells.guna2DataGridView2.Rows.Clear();
+		}
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {

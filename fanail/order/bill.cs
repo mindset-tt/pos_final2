@@ -17,7 +17,8 @@ namespace fanail.order
             InitializeComponent();
             order_bill bill = new order_bill();
             crystalReportViewer1.Refresh();
-            bill.SetParameterValue("order_id", check_order.order_id);
+			bill.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
+			bill.SetParameterValue("order_id", check_order.order_id);
             crystalReportViewer1.ReportSource = bill;
             crystalReportViewer1.Refresh();
         }

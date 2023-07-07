@@ -28,10 +28,12 @@ crystalReportViewer1.PrintReport();
 		{
 			try
 			{
+				dateTimePicker2.CustomFormat = "yyyy-MM-dd";
+				dateTimePicker1.CustomFormat = "yyyy-MM-dd";
 				RProductTop bill = new RProductTop();
 				bill.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
-				bill.SetParameterValue("StartDate", dateTimePicker1.Value);
-				bill.SetParameterValue("EndDate", dateTimePicker2.Value);
+				bill.SetParameterValue("StartDate", dateTimePicker1.Text);
+				bill.SetParameterValue("EndDate", dateTimePicker2.Text);
 				crystalReportViewer1.Refresh();
 				crystalReportViewer1.ReportSource = bill;
 				crystalReportViewer1.Refresh();

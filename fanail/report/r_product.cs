@@ -91,6 +91,8 @@ namespace fanail.report
 			report1.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
 			report2.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
 			report3.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
+			dateTimePicker2.CustomFormat = "yyyy-MM-dd";
+			dateTimePicker1.CustomFormat = "yyyy-MM-dd";
 			if (guna2ComboBox1.Text == "ທັງໝົດ" && guna2ComboBox2.Text == "ທັງໝົດ")
 			{
 				try
@@ -105,8 +107,8 @@ namespace fanail.report
 					//Dt.Load(myreader);
 					//report.SetDataSource(Dt);
 					
-					report.SetParameterValue("StartDate", dateTimePicker1.Value);
-					report.SetParameterValue("EndDate", dateTimePicker2.Value);
+					report.SetParameterValue("StartDate", dateTimePicker1.Text);
+					report.SetParameterValue("EndDate", dateTimePicker2.Text);
 					
 					crystalReportViewer1.Refresh();
 					crystalReportViewer1.ReportSource = report;
@@ -134,8 +136,8 @@ namespace fanail.report
 					//report.SetDataSource(Dt);
 
 					report1.SetParameterValue("type_name", guna2ComboBox1.Text);
-					report1.SetParameterValue("StartDate", dateTimePicker1.Value);
-					report1.SetParameterValue("EndDate", dateTimePicker2.Value);
+					report1.SetParameterValue("StartDate", dateTimePicker1.Text);
+					report1.SetParameterValue("EndDate", dateTimePicker2.Text);
 					crystalReportViewer1.Refresh();
 					crystalReportViewer1.ReportSource = report1;
 					crystalReportViewer1.Refresh();
@@ -163,8 +165,8 @@ namespace fanail.report
 					//Dt.Load(myreader);
 					//report.SetDataSource(Dt);
 					report2.SetParameterValue("unit_name", guna2ComboBox2.Text);
-					report2.SetParameterValue("StartDate", dateTimePicker1.Value);
-					report2.SetParameterValue("EndDate", dateTimePicker2.Value);
+					report2.SetParameterValue("StartDate", dateTimePicker1.Text);
+					report2.SetParameterValue("EndDate", dateTimePicker2.Text);
 					crystalReportViewer1.Refresh();
 					crystalReportViewer1.ReportSource = report2;
 					crystalReportViewer1.Refresh();
@@ -190,8 +192,8 @@ namespace fanail.report
 					//report.SetDataSource(Dt);
 					report3.SetParameterValue("type_name", guna2ComboBox1.Text);
 					report3.SetParameterValue("unit_name", guna2ComboBox2.Text);
-					report3.SetParameterValue("StartDate", dateTimePicker1.Value);
-					report3.SetParameterValue("EndDate", dateTimePicker2.Value);
+					report3.SetParameterValue("StartDate", dateTimePicker1.Text);
+					report3.SetParameterValue("EndDate", dateTimePicker2.Text);
 					crystalReportViewer1.Refresh();
 					crystalReportViewer1.ReportSource = report3;
 					crystalReportViewer1.Refresh();

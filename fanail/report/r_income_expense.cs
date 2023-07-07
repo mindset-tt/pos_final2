@@ -24,20 +24,26 @@ namespace fanail.report
 		double usd = 0, bath = 0;
 		string allimportprice;
 		string allsellprice;
+		//dateTimePicker2.CustomFormat = "yyyy-MM-dd";
 		private void guna2Button2_Click(object sender, EventArgs e)
 		{
 			Report_Paid reportreceipt_paid = new Report_Paid();
-
+			dateTimePicker2.CustomFormat = "yyyy-MM-dd";
+			dateTimePicker1.CustomFormat = "yyyy-MM-dd";
 			reportreceipt_paid.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
 			try
 			{
 				getcurrency();
+
 				SqlConnection con = new SqlConnection(@"Server=localhost,1433;Database=pos_db;User ID=sa;Password=<Mylovefromthesky8553!>;MultipleActiveResultSets=False;TrustServerCertificate=True;");
 				con.Open();
 				string sql = "select sum(imd_qty) As qty,sum(imd_totalPrice) As price from tb_importdetail as d1 inner join tb_import as d2 on (d1.im_id=d2.im_id) where d2.im_date between @date1 and @date2";
 				SqlCommand cmd = new SqlCommand(sql, con);
-				cmd.Parameters.AddWithValue("date1", dateTimePicker1.Value);
-				cmd.Parameters.AddWithValue("date2", dateTimePicker2.Value);
+				String StartDate = dateTimePicker1.Text;
+				String EndDate = dateTimePicker2.Text;
+				cmd.Parameters.AddWithValue("date1", StartDate);
+				//MessageBox.Show(StartDate);
+				cmd.Parameters.AddWithValue("date2", EndDate);
 				SqlDataReader Myreader = cmd.ExecuteReader();
 				if (Myreader.Read())
 				{
@@ -60,8 +66,8 @@ namespace fanail.report
 				con.Open();
 				sql = "select sum(sell_total_qty) As qty,sum(sell_total_price) As price from tb_sell where sell_date between @date1 and @date2";
 				cmd = new SqlCommand(sql, con);
-				cmd.Parameters.AddWithValue("date1", dateTimePicker1.Value);
-				cmd.Parameters.AddWithValue("date2", dateTimePicker2.Value);
+				cmd.Parameters.AddWithValue("date1", StartDate);
+				cmd.Parameters.AddWithValue("date2", EndDate);
 				Myreader = cmd.ExecuteReader();
 				if (Myreader.Read())
 				{
@@ -79,8 +85,8 @@ namespace fanail.report
 				con.Open();
 				sql = "select sum(sell_total_qty) As qty,sum(sell_total_price) As price from tb_sell where sell_date between @date1 and @date2";
 				cmd = new SqlCommand(sql, con);
-				cmd.Parameters.AddWithValue("date1", dateTimePicker1.Value);
-				cmd.Parameters.AddWithValue("date2", dateTimePicker2.Value);
+				cmd.Parameters.AddWithValue("date1", StartDate);
+				cmd.Parameters.AddWithValue("date2", EndDate);
 				Myreader = cmd.ExecuteReader();
 				if (Myreader.Read())
 				{
@@ -98,8 +104,8 @@ namespace fanail.report
 				con.Open();
 				sql = "select sum(sell_total_qty) As qty,sum(sell_total_price) As price from tb_sell where sell_date between @date1 and @date2";
 				cmd = new SqlCommand(sql, con);
-				cmd.Parameters.AddWithValue("date1", dateTimePicker1.Value);
-				cmd.Parameters.AddWithValue("date2", dateTimePicker2.Value);
+				cmd.Parameters.AddWithValue("date1", StartDate);
+				cmd.Parameters.AddWithValue("date2", EndDate);
 				Myreader = cmd.ExecuteReader();
 				if (Myreader.Read())
 				{
@@ -119,10 +125,12 @@ namespace fanail.report
 					}
 					else
 					{
-						MessageBox.Show("ຂໍອະໄພບໍ່ມີຂໍ້ມູນລາຍງານໃນຊ່ວງວັນທີ່ " + dateTimePicker1.Value.ToString("dd/MM/yyyy") + " ຫາ " + dateTimePicker2.Value.ToString("dd/MM/yyyy") + " ກະລຸນາກວດສອບຄຶນໃໝ່", "ຜິດພາດ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						MessageBox.Show("ຂໍອະໄພບໍ່ມີຂໍ້ມູນລາຍງານໃນຊ່ວງວັນທີ່ " + StartDate + " ຫາ " + EndDate + " ກະລຸນາກວດສອບຄຶນໃໝ່", "ຜິດພາດ", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
 				}
 				con.Close();
+				dateTimePicker2.CustomFormat = "dd/MM/yyyy";
+				dateTimePicker1.CustomFormat = "dd/MM/yyyy";
 			}
 			catch (Exception ex)
 			{

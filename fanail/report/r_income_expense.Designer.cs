@@ -150,6 +150,7 @@
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(188, 50);
 			this.dateTimePicker1.TabIndex = 194;
+			this.dateTimePicker1.Value = new System.DateTime(2023, 7, 8, 0, 0, 0, 0);
 			// 
 			// label4
 			// 

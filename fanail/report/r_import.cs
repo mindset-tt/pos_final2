@@ -27,12 +27,16 @@ namespace fanail.report
 		{
 			try
 			{
+				dateTimePicker2.CustomFormat = "yyyy-MM-dd";
+				dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+				String StartDate = dateTimePicker1.Text;
+				String EndDate = dateTimePicker2.Text;
 				if (guna2CustomRadioButton1.Checked == true)
 				{
 					report_Order bill = new report_Order();
 					bill.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
-					bill.SetParameterValue("StartDate", dateTimePicker1.Value);
-					bill.SetParameterValue("EndDate", dateTimePicker2.Value);
+					bill.SetParameterValue("StartDate", StartDate);
+					bill.SetParameterValue("EndDate",EndDate);
 					crystalReportViewer1.Refresh();
 					crystalReportViewer1.ReportSource = bill;
 					crystalReportViewer1.Refresh();
@@ -41,8 +45,8 @@ namespace fanail.report
 				{
 					report_Import bill = new report_Import();
 					bill.SetDatabaseLogon("sa", "<Mylovefromthesky8553!>", "localhost,1433", "pos_db");
-					bill.SetParameterValue("StartDate", dateTimePicker1.Value);
-					bill.SetParameterValue("EndDate", dateTimePicker2.Value);
+					bill.SetParameterValue("StartDate", StartDate);
+					bill.SetParameterValue("EndDate", EndDate);
 					crystalReportViewer1.Refresh();
 					crystalReportViewer1.ReportSource = bill;
 					crystalReportViewer1.Refresh();

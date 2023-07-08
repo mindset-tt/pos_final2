@@ -205,6 +205,8 @@ namespace fanail.report
 					MessageBox.Show("ບໍ່ສາມາດສະແດງລາຍງານໄດ້");
 				}
 			}
+			dateTimePicker2.CustomFormat = "dd/MM/yyyy";
+			dateTimePicker1.CustomFormat = "dd/MM/yyyy";
 		}
 	}
 }

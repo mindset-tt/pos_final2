@@ -42,6 +42,8 @@ crystalReportViewer1.PrintReport();
 			{
 				MessageBox.Show(ex.Message);
 			}
+			dateTimePicker2.CustomFormat = "dd/MM/yyyy";
+			dateTimePicker1.CustomFormat = "dd/MM/yyyy";
 		}
 	}
 }

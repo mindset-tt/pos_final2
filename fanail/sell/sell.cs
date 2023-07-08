@@ -111,7 +111,7 @@ namespace fanail.sell
 		{
 			try
 			{
-				SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-FD3T47E\SQLEXPRESS;Initial Catalog=pos_db ;Integrated Security=True");
+				SqlConnection con = new SqlConnection(@"Server=localhost,1433;Database=pos_db;User ID=sa;Password=<Mylovefromthesky8553!>;MultipleActiveResultSets=False;TrustServerCertificate=True;");
 				con.Close();
 				con.Open();
 				string sql = "Select pro_qty From tb_product Where pro_id=@pro_id";
@@ -281,16 +281,16 @@ namespace fanail.sell
 			if (guna2DataGridView2.Rows.Count > 0)
 			{
 				guna2TextBox1.Text = guna2DataGridView2.CurrentRow.Cells["dataGridViewTextBoxColumn6"].Value.ToString();
-				//if (guna2DataGridView2.CurrentCell.ColumnIndex == guna2DataGridView2.CurrentRow.Cells[guna2DataGridView2.Columns["dataGridViewImageColumn2"].Index].ColumnIndex)
-				//{
-				//    if (WarningMessage.Show("ທ່ານຕ້ອງການລຶບລາຍການດັ່ງກ່າວແທ້ບໍ?") == DialogResult.Yes)
-				//    {
-				//        guna2DataGridView2.Rows.Remove(guna2DataGridView2.CurrentRow);
-				//        guna2TextBox1.Text = "";
-				//    }
-				//}
-				sumQty();
-			}
+                if (guna2DataGridView2.CurrentCell.ColumnIndex == guna2DataGridView2.CurrentRow.Cells[guna2DataGridView2.Columns["Column10"].Index].ColumnIndex)
+                {
+                    if (WarningMessage.Show("ທ່ານຕ້ອງການລຶບລາຍການດັ່ງກ່າວແທ້ບໍ?") == DialogResult.Yes)
+                    {
+                        guna2DataGridView2.Rows.Remove(guna2DataGridView2.CurrentRow);
+                        guna2TextBox1.Text = "";
+                    }
+                }
+                sumQty();
+            }
 			if (guna2DataGridView2.Rows.Count == 0)
 			{
 				guna2Button3.Visible = false;

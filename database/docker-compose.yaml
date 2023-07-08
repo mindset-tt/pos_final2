@@ -7,8 +7,8 @@ services:
   environment:
    - ACCEPT_EULA=Y
    - SA_PASSWORD=<Mylovefromthesky8553!>
-   - attach_dbs=[{"dbName":"Anna_shop","dbFiles":["D:\\Download\\Anna_shop\\database\\Anna_shop.MDF","D:\\Download\\Anna_shop\\database\\Anna_shop_log.LDF"]}]
+   - attach_dbs=[{"dbName":"Anna_shop","dbFiles":["C:\\Year4\\Anny\\b\\database\\Anna_shop.MDF","C:\\Year4\\Anny\\b\\database\\Anna_shop_log.LDF"]}]
   ports:
    - '1433:1433'
   volumes:
-    - D:\Download\Anna_shop\database:/var/opt/mssql/data
+    - C:\\Year4\\Anny\\b\\database\\:/var/opt/mssql/data

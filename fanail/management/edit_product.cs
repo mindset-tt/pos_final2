@@ -154,7 +154,32 @@ namespace fanail.management
 			label4.Visible = false;
 			guna2TextBox2.Focus();
 		}
-		private void FillInfo()
+
+        private void guna2TextBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void guna2TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void guna2TextBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void FillInfo()
 		{
 			guna2TextBox2.Enabled = false;
 			guna2TextBox4.Focus();
